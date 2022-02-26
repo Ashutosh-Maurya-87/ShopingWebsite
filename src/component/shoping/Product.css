@@ -8,3 +8,7 @@
 .get-product-button {
   text-align: center;
 }
+.cardHeight {
+  width: "100px";
+  height: "100px";
+}

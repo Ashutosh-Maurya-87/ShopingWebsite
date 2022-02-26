@@ -1,13 +1,25 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Product.css";
-import { Card } from "@material-ui/core";
+//import { Card } from "@material-ui/core";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Col, Row } from "reactstrap";
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  CardImg,
+  CardTitle,
+  Col,
+  Row,
+  CardText,
+  CardLink,
+  CardDeck,
+} from "reactstrap";
 import { Share } from "@material-ui/icons";
 
 export interface Iproduct {
@@ -43,32 +55,55 @@ function Product(Iproduct: any) {
       </div>
       <div className="get-product-button">
         <button onClick={getProductData}>Get Product </button>
+      </div>
 
-        {product.map((comingData: any) => {
-          return (
-            <>
-              <Row>
-                <Col md="4" sm="12">
-                  <Card style={{ maxWidth: 345 }}>
-                    <CardMedia component="img" image={comingData.image} />
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        {comingData.title}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {comingData.description}
-                      </Typography>
-                    </CardContent>
-                    <CardActions>
-                      <Button size="small">
-                        <Share />
-                      </Button>
-                      <Button size="small">Learn More</Button>
-                    </CardActions>
-                  </Card>
-                </Col>
-              </Row>
-              {/* <div className="card" style={{ width: "18rem" }}>
+      {product.map((comingData: any) => {
+        return (
+          <>
+            <CardDeck>
+              <Card body>
+                <CardBody>
+                  <CardTitle>Card title</CardTitle>
+                </CardBody>
+                <img
+                  width="200px"
+                  src={comingData.image}
+                  alt="Card image cap"
+                />
+                <CardBody>
+                  <CardText>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </CardText>
+                  <CardLink href="#">Card Link</CardLink>
+                  <CardLink href="#">Another Link</CardLink>
+                </CardBody>
+              </Card>
+            </CardDeck>
+            {/* <Card style={{ maxWidth: 300, height: "200" }}>
+                  <CardMedia
+                    component="img"
+                    image=
+                    width="300px"
+                  />
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      component="div"
+                    ></Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small">
+                      <Share />
+                    </Button>
+                    <Button size="small">Learn More</Button>
+                  </CardActions>
+                </Card> */}
+            {/* <div className="card" style={{ width: "18rem" }}>
                 <img
                   src={comingData.image}
                   className="card-img-top"
@@ -79,12 +114,11 @@ function Product(Iproduct: any) {
                   <h5 className="card-title">{comingData.title}</h5>
                   <p className="card-text">{comingData.description}</p>
                   {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
-              {/* </div> */}
-              {/* </div> */}
-            </>
-          );
-        })}
-      </div>
+            {/* </div> */}
+            {/* </div> */}
+          </>
+        );
+      })}
     </>
   );
 }
