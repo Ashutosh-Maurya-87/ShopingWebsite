@@ -2,23 +2,21 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Product.css";
 //import { Card } from "@material-ui/core";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+// import CardActions from "@mui/material/CardActions";
+// import CardContent from "@mui/material/CardContent";
+// import CardMedia from "@mui/material/CardMedia";
+// import Button from "@mui/material/Button";
+// import Typography from "@mui/material/Typography";
 import {
   Card,
   CardBody,
-  CardFooter,
-  CardHeader,
-  CardImg,
   CardTitle,
   Col,
   Row,
   CardText,
   CardLink,
   CardDeck,
+  CardHeader,
 } from "reactstrap";
 import { Share } from "@material-ui/icons";
 
@@ -60,26 +58,32 @@ function Product(Iproduct: any) {
       {product.map((comingData: any) => {
         return (
           <>
-            <CardDeck>
-              <Card body>
-                <CardBody>
-                  <CardTitle>Card title</CardTitle>
-                </CardBody>
-                <img
-                  width="200px"
-                  src={comingData.image}
-                  alt="Card image cap"
-                />
-                <CardBody>
-                  <CardText>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </CardText>
-                  <CardLink href="#">Card Link</CardLink>
-                  <CardLink href="#">Another Link</CardLink>
-                </CardBody>
-              </Card>
-            </CardDeck>
+            <Row>
+              <Col
+                md="4"
+                sm="12"
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  flexWrap: "wrap",
+                }}
+              >
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Card title</CardTitle>
+                  </CardHeader>
+                  <img width="200px" src={comingData.image} alt="Card cap" />
+                  <CardBody>
+                    <CardText>
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </CardText>
+                    <CardLink href="#">Card Link</CardLink>
+                    <CardLink href="#">Another Link</CardLink>
+                  </CardBody>
+                </Card>
+              </Col>
+            </Row>
             {/* <Card style={{ maxWidth: 300, height: "200" }}>
                   <CardMedia
                     component="img"
