@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-//import "./Product.css";
+import "./Product.css";
 //import { Card } from "@material-ui/core";
 // import CardActions from "@mui/material/CardActions";
 // import CardContent from "@mui/material/CardContent";
@@ -79,7 +79,12 @@ function Product(Iproduct: any) {
                       {comingData.category}
                     </CardSubtitle>
                     <CardText>{comingData.description}</CardText>
-                    <Button>Button</Button>
+                    <CardFooter>
+                      <div className="d-flex">
+                        <Button>Button</Button>
+                        <h4 className="ml-5">{comingData.price}Rs.</h4>
+                      </div>
+                    </CardFooter>
                   </CardBody>
                 </Card>
               </Col>

@@ -4,7 +4,7 @@ import "./Navbar.css";
 export const Navbar: React.FC = () => {
   return (
     <>
-      <div className="navbar">
+      <div className="navbar d-flex justify-content-start">
         <a className="active" href="#">
           <i className="fa fa-fw fa-home"></i> Home
         </a>
